@@ -17,9 +17,9 @@ span1.textContent = `${ date }`;
 header1.textContent = `${ title}`;
 span2.textContent = `${ temp }`;
 
-
-
 console.log(div)
+
+return div;
 
 
   // TASK 1
@@ -36,8 +36,9 @@ console.log(div)
   //
 }
 
+const testData = { title:'title', date: 'date', temp:"temp"}
 
-Header("title", "date", "temp")
+Header()
 
 
 const headerAppender = (selector) => {
