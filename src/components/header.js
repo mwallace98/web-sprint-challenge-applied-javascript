@@ -1,23 +1,20 @@
 const Header = (title, date, temp) => {
-
   const div = document.createElement('div');
   const span1 = document.createElement('span');
   const header1 = document.createElement('h1');
   const span2 = document.createElement('span')
 
-div.appendChild(span1);
-div.appendChild(header1);
-div.appendChild(span2);
+  div.classList.add("header");
+  span1.classList.add("date");
+  span2.classList.add("temp");
 
-div.classList.add("header");
-span1.classList.add("date");
-span2.classList.add("temp");
+  span1.textContent = date ;
+  header1.textContent =  title;
+  span2.textContent =  temp ;
 
-span1.textContent = `${ date }`;
-header1.textContent = `${ title}`;
-span2.textContent = `${ temp }`;
-
-console.log(div)
+  div.appendChild(span1);
+  div.appendChild(header1);
+  div.appendChild(span2);
 
 return div;
 
@@ -36,12 +33,20 @@ return div;
   //
 }
 
-const testData = { title:'title', date: 'date', temp:"temp"}
 
-Header()
+Header('title', 'date', 'temp')
 
 
 const headerAppender = (selector) => {
+  
+  
+    const headerElement = Header('title', 'date', 'temp');
+    const targetElement = document.querySelector(selector);
+  
+   console.log(headerElement, "headerElement");
+   console.log(targetElement, "targetElement");
+  
+
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
@@ -53,7 +58,11 @@ const headerAppender = (selector) => {
   // but it can also take in a variable (ie querySelector(selector))
   // We are taking care of passing in the correct selector on line 16,
   // so all that you need to do is pass it into the querySelector method
-  // for the tests to work!
+  // for the tests to work! 
+
+  
 }
+
+headerAppender()
 
 export { Header, headerAppender }

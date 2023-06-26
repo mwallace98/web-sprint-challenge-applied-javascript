@@ -1,4 +1,21 @@
 const Tabs = (topics) => {
+  
+  const divTopics = document.createElement('div');
+  divTopics.classList.add('topics')
+
+  const tabElements = topics.map((topic) => {
+    const divTab = document.createElement('div');
+    divTab.className = 'tab';
+    divTab.textContent = topic;
+    return divTab;
+  });
+
+  tabElements.forEach((tabElement) => {
+    divTopics.appendChild(tabElement);
+  });
+ 
+return divTopics
+
   // TASK 3
   // ---------------------
   // Implement this function which takes an array of strings ("topics") as its only argument.
@@ -14,6 +31,8 @@ const Tabs = (topics) => {
   // </div>
   //
 }
+
+Tabs(['javscript', 'bootstrap', 'technology'])
 
 const tabsAppender = (selector) => {
   // TASK 4
