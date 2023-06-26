@@ -43,8 +43,8 @@ const headerAppender = (selector) => {
     const headerElement = Header('title', 'date', 'temp');
     const targetElement = document.querySelector(selector);
   
-   console.log(headerElement, "headerElement");
-   console.log(targetElement, "targetElement");
+  //  console.log(headerElement, "headerElement");
+  //  console.log(targetElement, "targetElement");
   
 
   // TASK 2
