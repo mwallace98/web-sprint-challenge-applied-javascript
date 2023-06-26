@@ -33,6 +33,7 @@ const Card = (article) => {
   divHeadline.textContent = article.headline;
   image.textContent = article.authorPhoto;
   span.textContent = article.authorName;
+  image.src = article.authorPhoto;
 
   divCard.appendChild(divHeadline);
   divCard.appendChild(divAuthor);
@@ -41,12 +42,14 @@ const Card = (article) => {
   divAuthor.appendChild(span);
 
   let artArray = Array.from(article)
-  
+  console.log(divCard)
+
 return divCard;
 
 }
 
 let testObject = {headline: 'headline', authorPhoto: 'authorPhoto',authorName: 'authorName' }
+
 
 Card(testObject);
 
