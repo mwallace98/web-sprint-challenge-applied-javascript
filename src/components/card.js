@@ -65,24 +65,36 @@ const cardAppender = (selector) => {
   //
   
   axios.get(`http://localhost:5001/api/articles`)
+  
   .then((response) => {
-    const articles = response.data.articles;
-    const articleArrays = Object.values(articles);
-    console.log(articleArrays,"articleArrays")
-
-    articleArrays.forEach((array) => {
-      const article = articles[array];
-      const card = Card(article);
-      const element = document.querySelector(selector);
-      element.appendChild(card);
+    const articles = Object.values(response.data.articles).flat();
+    const container = document.querySelector(selector); 
+    console.log("article", articles);
     
-   });
+    articles.forEach(article => {
+      
+      container.appendChild(Card(article))
+    });
+
+
+
+  //   console.log(articles,'articles')
+  //   const articleArrays = Object.keys(articles);
+  //   console.log(articleArrays,'articles array ')
+
+  //   articleArrays.forEach((array) => {
+  //     const article = articles[array];
+  //     const card = Card(article);
+  //     const element = document.querySelector(selector);
+  //     element.appendChild(card);
+      
+  //  });
   })
   .catch((error) => {
     console.error("Error", error);
-  });
+  });      
 };
 
-cardAppender();
+
 
 export { Card, cardAppender }
